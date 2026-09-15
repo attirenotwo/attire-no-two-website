@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Attire no•II</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Italiana&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Italiana&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* =========================================================
+       ATTIRE NO•II
+       PALETTE:
+       vintage golden yellow
+       powder pink
+       satin black
+       warm ivory
+    ========================================================= */
+
     :root {
-      /* ATTIRE NO•II PALETTE */
-      --ivory: #F5F0E5;
-      --warm-white: #FBF8F1;
+      --ivory: #F7F2E8;
+      --warm-white: #FCF9F3;
 
-      --butter: #E5C95A;
-      --mustard: #C69B2E;
+      --gold: #C79B31;
+      --gold-light: #D8B54E;
+      --gold-deep: #A97A20;
 
-      --powder-pink: #D79AA7;
-      --dusty-pink: #B97978;
+      --pink: #D99AAA;
+      --pink-light: #E7B7C0;
+      --pink-deep: #BD7888;
 
-      --oxblood: #682A2D;
-      --rust: #A4472F;
+      --satin-black: #171615;
+      --soft-black: #24211F;
+      --charcoal: #302C29;
 
-      --chocolate: #35251E;
-      --ink: #181613;
+      --brown: #60402E;
 
-      --blue: #66889B;
-      --olive: #73754D;
+      --text-dark: #1D1A18;
     }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
 
     * {
       margin: 0;
@@ -43,543 +62,969 @@
     }
 
     body {
+      margin: 0;
       background: var(--ivory);
-      color: var(--ink);
+      color: var(--text-dark);
       font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
     }
 
-    /* ---------------- NAV ---------------- */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .nav {
-      height: 110px;
-      padding: 0 5vw;
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .header {
+      height: 112px;
+      width: 100%;
 
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
 
+      padding: 0 5vw;
+
       background: var(--warm-white);
 
       position: relative;
       z-index: 20;
+
+      border-bottom: 1px solid rgba(29, 26, 24, 0.08);
     }
 
-    .nav-side {
-      font-size: 12px;
-      letter-spacing: .18em;
+    .header-left,
+    .header-right {
+      font-size: 11px;
+      font-weight: 400;
+
+      letter-spacing: 0.22em;
       text-transform: uppercase;
     }
 
-    .nav-right {
+    .header-right {
       text-align: right;
     }
 
     .logo {
       font-family: "Italiana", serif;
-      font-size: clamp(34px, 4vw, 55px);
+      font-size: clamp(34px, 4vw, 54px);
       font-weight: 400;
+
+      letter-spacing: -0.035em;
       white-space: nowrap;
     }
 
-    /* ---------------- HERO ---------------- */
+
+    /* =========================================================
+       HERO
+    ========================================================= */
 
     .hero {
       position: relative;
-      height: calc(100svh - 110px);
-      min-height: 650px;
+
+      width: 100%;
+      height: calc(100svh - 112px);
+      min-height: 680px;
 
       background-image:
         linear-gradient(
-          to right,
-          rgba(28, 20, 15, .22),
-          rgba(28, 20, 15, .02) 55%
+          to bottom,
+          rgba(15, 13, 12, 0.00) 0%,
+          rgba(15, 13, 12, 0.02) 50%,
+          rgba(15, 13, 12, 0.22) 100%
         ),
-        url("hero.jpg");
+        url("./C718E9AF-9388-40F0-8434-4481E6191104.jpeg");
 
       background-size: cover;
-      background-position: center 38%;
+      background-position: center 40%;
+      background-repeat: no-repeat;
+    }
+
+
+    /* =========================================================
+       HERO SMALL LABEL
+    ========================================================= */
+
+    .hero-label {
+      position: absolute;
+
+      left: 5vw;
+      bottom: 45px;
+
+      color: var(--warm-white);
+
+      font-size: 10px;
+      font-weight: 400;
+
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+
+      text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+    }
+
+
+    /* =========================================================
+       CHOSEN SECTION
+       GOLDEN YELLOW
+    ========================================================= */
+
+    .chosen {
+      background: var(--gold);
+
+      min-height: 460px;
 
       display: flex;
-      align-items: flex-end;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-      padding: 6vw;
-      color: var(--warm-white);
+      padding: 90px 7vw;
+
+      text-align: center;
     }
 
-    .hero-copy {
-      max-width: 610px;
-      margin-bottom: 2vh;
-    }
+    .chosen-small {
+      margin-bottom: 28px;
 
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: .27em;
+      font-size: 10px;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
-      margin-bottom: 22px;
+
+      color: var(--soft-black);
     }
 
-    .hero h1 {
+    .chosen h1 {
+      max-width: 1050px;
+
       font-family: "Italiana", serif;
+
+      font-size: clamp(65px, 9vw, 135px);
+      line-height: 0.91;
+
       font-weight: 400;
+      letter-spacing: -0.04em;
 
-      font-size: clamp(64px, 8vw, 130px);
-      line-height: .87;
-      letter-spacing: -.035em;
+      color: var(--satin-black);
     }
 
-    .hero h1 em {
+    .chosen h1 em {
       font-weight: 400;
     }
 
-    .hero-button {
-      display: inline-block;
-      margin-top: 38px;
 
-      border: 1px solid rgba(255,255,255,.85);
-
-      padding: 16px 28px;
-
-      color: white;
-      text-decoration: none;
-
-      text-transform: uppercase;
-      letter-spacing: .2em;
-      font-size: 11px;
-
-      transition: .25s ease;
-    }
-
-    .hero-button:hover {
-      background: var(--warm-white);
-      color: var(--ink);
-    }
-
-    /* ---------------- STATEMENT ---------------- */
+    /* =========================================================
+       PINK STATEMENT
+    ========================================================= */
 
     .statement {
-      background: var(--butter);
+      min-height: 390px;
 
-      min-height: 330px;
+      background: var(--pink);
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      text-align: center;
+      padding: 80px 7vw;
 
-      padding: 70px 7vw;
+      text-align: center;
     }
 
     .statement h2 {
-      font-family: "Italiana", serif;
-      font-weight: 400;
+      max-width: 950px;
 
-      font-size: clamp(40px, 5vw, 75px);
+      font-family: "Italiana", serif;
+
+      font-size: clamp(43px, 5.5vw, 78px);
       line-height: 1.08;
 
-      max-width: 1000px;
-
-      color: var(--chocolate);
-    }
-
-    /* ---------------- INTRO ---------------- */
-
-    .intro {
-      min-height: 650px;
-
-      background: var(--powder-pink);
-
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-
-      padding: 9vw 7vw;
-    }
-
-    .intro-label {
-      font-size: 11px;
-      letter-spacing: .35em;
-      text-transform: uppercase;
-
-      color: var(--oxblood);
-    }
-
-    .intro-copy h3 {
-      font-family: "Italiana", serif;
-
-      font-size: clamp(48px, 6vw, 88px);
-      line-height: 1.03;
-
       font-weight: 400;
 
-      max-width: 900px;
-
-      color: var(--oxblood);
+      color: var(--satin-black);
     }
 
-    .intro-copy p {
-      max-width: 570px;
 
-      margin-top: 40px;
+    /* =========================================================
+       SATIN BLACK SECTION
+    ========================================================= */
 
-      font-size: 15px;
-      line-height: 1.8;
+    .collection {
+      position: relative;
 
-      color: var(--chocolate);
-    }
+      min-height: 720px;
 
-    /* ---------------- COLOR / BRAND STRIP ---------------- */
+      background:
+        radial-gradient(
+          circle at 75% 25%,
+          #2C2927 0%,
+          #1E1C1B 34%,
+          #151413 72%
+        );
 
-    .color-strip {
-      height: 145px;
+      color: var(--ivory);
 
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: 0.7fr 1.5fr;
+
+      gap: 7vw;
+
+      padding: 10vw 7vw;
     }
 
-    .color-strip div:nth-child(1) {
-      background: var(--oxblood);
+    /*
+      subtle satin sheen
+    */
+
+    .collection::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          120deg,
+          transparent 0%,
+          rgba(255,255,255,0.025) 38%,
+          rgba(255,255,255,0.07) 50%,
+          transparent 63%
+        );
     }
 
-    .color-strip div:nth-child(2) {
-      background: var(--rust);
+    .collection-label {
+      position: relative;
+      z-index: 2;
+
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+
+      color: var(--pink-light);
     }
 
-    .color-strip div:nth-child(3) {
-      background: var(--butter);
+    .collection-content {
+      position: relative;
+      z-index: 2;
     }
 
-    .color-strip div:nth-child(4) {
-      background: var(--olive);
+    .collection h2 {
+      max-width: 900px;
+
+      font-family: "Italiana", serif;
+
+      font-size: clamp(52px, 7vw, 100px);
+      line-height: 1;
+
+      font-weight: 400;
+      letter-spacing: -0.025em;
+
+      color: var(--ivory);
     }
 
-    .color-strip div:nth-child(5) {
-      background: var(--blue);
+    .collection p {
+      max-width: 540px;
+
+      margin-top: 42px;
+
+      font-size: 14px;
+      line-height: 1.9;
+
+      font-weight: 300;
+
+      color: rgba(247, 242, 232, 0.75);
     }
 
-    .color-strip div:nth-child(6) {
-      background: var(--chocolate);
+    .collection-link {
+      display: inline-block;
+
+      margin-top: 42px;
+      padding-bottom: 8px;
+
+      border-bottom: 1px solid var(--pink);
+
+      color: var(--pink-light);
+
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
     }
 
-    /* ---------------- SECOND LIFE ---------------- */
+
+    /* =========================================================
+       COLOR INTERLUDE
+    ========================================================= */
+
+    .palette {
+      width: 100%;
+      height: 170px;
+
+      display: grid;
+      grid-template-columns:
+        1.2fr
+        0.8fr
+        1.2fr
+        0.8fr;
+    }
+
+    .palette-gold {
+      background: var(--gold);
+    }
+
+    .palette-black {
+      background: var(--satin-black);
+    }
+
+    .palette-pink {
+      background: var(--pink);
+    }
+
+    .palette-ivory {
+      background: var(--ivory);
+    }
+
+
+    /* =========================================================
+       SECOND LIFE
+    ========================================================= */
 
     .second-life {
-      min-height: 620px;
+      min-height: 690px;
 
-      background: var(--oxblood);
-      color: var(--ivory);
+      background: var(--ivory);
 
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
-      padding: 7vw;
+      padding: 8vw 7vw;
     }
 
-    .second-life small {
-      letter-spacing: .3em;
+    .second-life-label {
+      font-size: 10px;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
+
+      color: var(--pink-deep);
     }
 
     .second-life h2 {
-      font-family: "Italiana", serif;
-      font-weight: 400;
-
-      font-size: clamp(55px, 8vw, 120px);
-      line-height: .95;
-
       max-width: 1100px;
+
+      font-family: "Italiana", serif;
+
+      font-size: clamp(68px, 10vw, 145px);
+      line-height: 0.88;
+
+      font-weight: 400;
+      letter-spacing: -0.045em;
+
+      color: var(--satin-black);
     }
 
-    /* ---------------- BLUE MOMENT ---------------- */
 
-    .blue-section {
-      background: var(--blue);
-      color: var(--warm-white);
+    /* =========================================================
+       PINK / BLACK BLOCK
+    ========================================================= */
 
-      min-height: 430px;
+    .editorial {
+      min-height: 600px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .editorial-pink {
+      background: var(--pink);
+
+      padding: 7vw;
 
       display: flex;
-      justify-content: center;
-      align-items: center;
-
-      padding: 8vw;
-      text-align: center;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .blue-section h2 {
+    .editorial-pink span {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .editorial-pink h3 {
       font-family: "Italiana", serif;
 
-      font-size: clamp(45px, 6vw, 90px);
+      font-size: clamp(52px, 6vw, 90px);
+      line-height: 0.96;
+
       font-weight: 400;
 
-      max-width: 950px;
+      color: var(--satin-black);
     }
 
-    /* ---------------- FOOTER ---------------- */
+    .editorial-black {
+      background: var(--satin-black);
+
+      padding: 7vw;
+
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .editorial-black h3 {
+      font-family: "Italiana", serif;
+
+      font-size: clamp(50px, 6vw, 88px);
+      line-height: 0.98;
+
+      font-weight: 400;
+
+      color: var(--gold-light);
+    }
+
+
+    /* =========================================================
+       NEWSLETTER
+    ========================================================= */
+
+    .newsletter {
+      background: var(--gold-light);
+
+      padding: 110px 7vw;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10vw;
+    }
+
+    .newsletter h2 {
+      font-family: "Italiana", serif;
+
+      font-size: clamp(48px, 6vw, 85px);
+      line-height: 1;
+
+      font-weight: 400;
+
+      color: var(--satin-black);
+    }
+
+    .newsletter-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .newsletter-right p {
+      max-width: 480px;
+
+      margin-bottom: 35px;
+
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .email-form {
+      width: 100%;
+
+      display: flex;
+
+      border-bottom: 1px solid var(--satin-black);
+    }
+
+    .email-form input {
+      flex: 1;
+
+      border: none;
+      outline: none;
+
+      background: transparent;
+
+      padding: 16px 0;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+
+      color: var(--satin-black);
+    }
+
+    .email-form input::placeholder {
+      color: rgba(23, 22, 21, 0.65);
+    }
+
+    .email-form button {
+      border: none;
+      background: transparent;
+
+      padding: 0 4px;
+
+      cursor: pointer;
+
+      font-size: 22px;
+
+      color: var(--satin-black);
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
     footer {
-      background: var(--chocolate);
+      background: var(--satin-black);
       color: var(--ivory);
 
-      padding: 70px 6vw 40px;
+      padding: 80px 6vw 35px;
     }
 
     .footer-top {
       display: grid;
       grid-template-columns: 1fr 1fr;
 
-      gap: 50px;
+      gap: 60px;
 
-      margin-bottom: 100px;
+      margin-bottom: 110px;
     }
 
     .footer-logo {
       font-family: "Italiana", serif;
-      font-size: 45px;
+
+      font-size: clamp(40px, 5vw, 70px);
+
+      color: var(--pink-light);
     }
 
     .footer-message {
-      font-family: "Italiana", serif;
-      font-size: clamp(30px, 4vw, 55px);
       max-width: 650px;
+
+      font-family: "Italiana", serif;
+
+      font-size: clamp(35px, 4vw, 60px);
+      line-height: 1.05;
+
+      color: var(--gold-light);
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.25);
-
       padding-top: 25px;
+
+      border-top: 1px solid rgba(247, 242, 232, 0.2);
 
       display: flex;
       justify-content: space-between;
+      gap: 20px;
 
-      font-size: 10px;
-      letter-spacing: .2em;
+      font-size: 9px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
+
+      color: rgba(247, 242, 232, 0.7);
     }
 
-    /* ---------------- MOBILE ---------------- */
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
 
     @media (max-width: 700px) {
 
-      .nav {
-        height: 95px;
+      .header {
+        height: 98px;
+
         padding: 0 22px;
       }
 
-      .logo {
-        font-size: 29px;
+      .header-left,
+      .header-right {
+        font-size: 9px;
+        letter-spacing: 0.18em;
       }
 
-      .nav-side {
-        font-size: 10px;
+      .logo {
+        font-size: 30px;
       }
+
+
+      /* HERO */
 
       .hero {
-        height: calc(100svh - 95px);
+        height: calc(100svh - 98px);
         min-height: 650px;
 
-        padding: 35px 25px;
+        background-image:
+          linear-gradient(
+            to bottom,
+            rgba(15,13,12,0) 0%,
+            rgba(15,13,12,0) 60%,
+            rgba(15,13,12,0.20) 100%
+          ),
+          url("./C718E9AF-9388-40F0-8434-4481E6191104.jpeg");
+
+        background-size: cover;
 
         /*
-          Important for your group image:
-          Keeps the women centered on mobile.
+          Keeps the center of the group visible
+          instead of pulling the image too far left/right.
         */
-        background-position: 50% center;
+        background-position: center center;
       }
 
-      .hero h1 {
-        font-size: 64px;
-        line-height: .91;
+      .hero-label {
+        left: 24px;
+        bottom: 25px;
+
+        font-size: 8px;
       }
 
-      .eyebrow {
-        font-size: 9px;
+
+      /* GOLD */
+
+      .chosen {
+        min-height: 390px;
+
+        padding: 75px 25px;
       }
+
+      .chosen-small {
+        font-size: 8px;
+      }
+
+      .chosen h1 {
+        font-size: clamp(62px, 18vw, 90px);
+        line-height: 0.9;
+      }
+
+
+      /* PINK */
 
       .statement {
-        min-height: 300px;
-        padding: 60px 30px;
+        min-height: 330px;
+
+        padding: 65px 28px;
       }
 
       .statement h2 {
-        font-size: 41px;
+        font-size: 42px;
       }
 
-      .intro {
-        min-height: 620px;
+
+      /* BLACK */
+
+      .collection {
+        min-height: 680px;
 
         grid-template-columns: 1fr;
 
-        gap: 60px;
+        gap: 65px;
 
         padding: 80px 28px;
       }
 
-      .intro-copy h3 {
-        font-size: 49px;
+      .collection h2 {
+        font-size: 55px;
       }
 
-      .color-strip {
-        height: 85px;
-        grid-template-columns: repeat(3, 1fr);
+
+      /* PALETTE */
+
+      .palette {
+        height: 120px;
+
+        grid-template-columns: repeat(4, 1fr);
       }
+
+
+      /* SECOND LIFE */
 
       .second-life {
-        min-height: 520px;
-        padding: 70px 28px;
+        min-height: 570px;
+
+        padding: 75px 28px;
       }
 
       .second-life h2 {
-        font-size: 60px;
+        font-size: clamp(65px, 19vw, 95px);
       }
 
-      .blue-section {
-        min-height: 360px;
-        padding: 60px 28px;
+
+      /* EDITORIAL */
+
+      .editorial {
+        grid-template-columns: 1fr;
       }
 
-      .blue-section h2 {
-        font-size: 48px;
+      .editorial-pink,
+      .editorial-black {
+        min-height: 430px;
+
+        padding: 65px 28px;
+      }
+
+      .editorial-pink h3,
+      .editorial-black h3 {
+        font-size: 58px;
+      }
+
+
+      /* NEWSLETTER */
+
+      .newsletter {
+        grid-template-columns: 1fr;
+
+        padding: 80px 28px;
+
+        gap: 65px;
+      }
+
+      .newsletter h2 {
+        font-size: 58px;
+      }
+
+
+      /* FOOTER */
+
+      footer {
+        padding: 70px 28px 30px;
       }
 
       .footer-top {
         grid-template-columns: 1fr;
-        margin-bottom: 70px;
+
+        margin-bottom: 80px;
       }
 
       .footer-bottom {
         flex-direction: column;
-        gap: 15px;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <nav class="nav">
 
-    <div class="nav-side">
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="header">
+
+    <div class="header-left">
       Menu
     </div>
 
-    <div class="logo">
+    <a href="#" class="logo">
       Attire no•II
-    </div>
+    </a>
 
-    <div class="nav-side nav-right">
+    <div class="header-right">
       Bag (0)
     </div>
 
-  </nav>
+  </header>
 
 
-  <main>
 
-    <!-- HERO -->
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
 
-    <section class="hero">
+  <section class="hero">
 
-      <div class="hero-copy">
+    <div class="hero-label">
+      Curated vintage & archival pieces
+    </div>
 
-        <div class="eyebrow">
-          Curated vintage & archival pieces
-        </div>
-
-        <h1>
-          Chosen for<br>
-          the <em>next.</em>
-        </h1>
-
-        <a href="#collection" class="hero-button">
-          Explore →
-        </a>
-
-      </div>
-
-    </section>
+  </section>
 
 
-    <!-- BUTTER -->
 
-    <section class="statement">
+  <!-- =======================================================
+       GOLD
+  ======================================================== -->
 
-      <h2>
-        Pieces with a past,<br>
-        chosen for what comes next.
-      </h2>
+  <section class="chosen">
 
-    </section>
+    <div class="chosen-small">
+      Attire no•II
+    </div>
 
+    <h1>
+      Chosen for<br>
+      the <em>next.</em>
+    </h1>
 
-    <!-- PINK -->
-
-    <section class="intro" id="collection">
-
-      <div class="intro-label">
-        Attire no•II
-      </div>
-
-      <div class="intro-copy">
-
-        <h3>
-          A considered collection of vintage,
-          archival and pre-loved pieces.
-        </h3>
-
-        <p>
-          Selected individually for character,
-          construction and the possibility of
-          another life.
-        </p>
-
-      </div>
-
-    </section>
+  </section>
 
 
-    <!-- PALETTE MOMENT -->
 
-    <section class="color-strip">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </section>
+  <!-- =======================================================
+       PINK
+  ======================================================== -->
+
+  <section class="statement">
+
+    <h2>
+      Pieces with a past,<br>
+      chosen for what comes next.
+    </h2>
+
+  </section>
 
 
-    <!-- OXBLOOD -->
 
-    <section class="second-life">
+  <!-- =======================================================
+       SATIN BLACK
+  ======================================================== -->
 
-      <small>
-        Chosen for the next
-      </small>
+  <section class="collection">
+
+    <div class="collection-label">
+      The Edit
+    </div>
+
+    <div class="collection-content">
 
       <h2>
-        A second life<br>
-        looks good<br>
-        on you.
+        A considered collection of vintage,
+        archival and pre-loved pieces.
       </h2>
 
-    </section>
+      <p>
+        Selected individually for character,
+        construction and the possibility of another life.
+        Pieces worth finding once, and choosing again.
+      </p>
+
+      <a href="#" class="collection-link">
+        Discover the collection →
+      </a>
+
+    </div>
+
+  </section>
 
 
-    <!-- BLUE -->
 
-    <section class="blue-section">
+  <!-- =======================================================
+       COLOR STRIP
+  ======================================================== -->
 
-      <h2>
-        People. Pieces.<br>
-        Stories. Forever.
-      </h2>
+  <section class="palette">
 
-    </section>
+    <div class="palette-gold"></div>
+    <div class="palette-black"></div>
+    <div class="palette-pink"></div>
+    <div class="palette-ivory"></div>
 
-  </main>
+  </section>
 
+
+
+  <!-- =======================================================
+       SECOND LIFE
+  ======================================================== -->
+
+  <section class="second-life">
+
+    <div class="second-life-label">
+      Attire no•II
+    </div>
+
+    <h2>
+      A second life<br>
+      looks good<br>
+      on you.
+    </h2>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       EDITORIAL BLOCKS
+  ======================================================== -->
+
+  <section class="editorial">
+
+    <div class="editorial-pink">
+
+      <span>
+        Curated / Collected / Chosen
+      </span>
+
+      <h3>
+        Not new.<br>
+        Next.
+      </h3>
+
+    </div>
+
+
+    <div class="editorial-black">
+
+      <h3>
+        People.<br>
+        Pieces.<br>
+        Stories.<br>
+        Forever.
+      </h3>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       NEWSLETTER
+  ======================================================== -->
+
+  <section class="newsletter">
+
+    <h2>
+      Be the first<br>
+      to know.
+    </h2>
+
+    <div class="newsletter-right">
+
+      <p>
+        New finds, upcoming edits and Attire no•II
+        releases, sent occasionally.
+      </p>
+
+      <form class="email-form">
+
+        <input
+          type="email"
+          placeholder="Email address"
+          aria-label="Email address"
+        >
+
+        <button type="submit" aria-label="Submit">
+          →
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
 
   <footer>
 
@@ -590,24 +1035,26 @@
       </div>
 
       <div class="footer-message">
-        The next chapter starts here.
+        Chosen for the next.
       </div>
 
     </div>
 
+
     <div class="footer-bottom">
 
       <span>
-        @attirenotwo
+        Shop &nbsp;&nbsp; About &nbsp;&nbsp; Journal
       </span>
 
       <span>
-        Curated Vintage & Archival Pieces
+        A second life looks good on you
       </span>
 
     </div>
 
   </footer>
+
 
 </body>
 </html>
