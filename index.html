@@ -1,275 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Attire no•II | Curated Vintage</title>
+  <title>Attire no•II</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Italiana&display=swap" rel="stylesheet">
 
-html {
-    scroll-behavior: smooth;
-}
+  <style>
+    :root {
+      /* ATTIRE NO•II PALETTE */
+      --ivory: #F5F0E5;
+      --warm-white: #FBF8F1;
 
-body {
-    background: #FAF8F2;
-    color: #292622;
-    font-family: Arial, Helvetica, sans-serif;
-}
+      --butter: #E5C95A;
+      --mustard: #C69B2E;
 
-/* HEADER */
-header {
-    width: 100%;
-    height: 82px;
-    padding: 0 4%;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    background: #FAF8F2;
-    border-bottom: 1px solid rgba(41, 38, 34, 0.08);
-    position: relative;
-    z-index: 10;
-}
+      --powder-pink: #D79AA7;
+      --dusty-pink: #B97978;
 
-.brand {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(28px, 3vw, 42px);
-    letter-spacing: -1.5px;
-    white-space: nowrap;
-}
+      --oxblood: #682A2D;
+      --rust: #A4472F;
 
-.menu,
-.header-right {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
+      --chocolate: #35251E;
+      --ink: #181613;
 
-.header-right {
-    display: flex;
-    justify-content: flex-end;
-    gap: 28px;
-}
-
-/* HERO */
-.hero {
-    min-height: calc(100vh - 82px);
-    position: relative;
-
-    background-image:
-        linear-gradient(
-            rgba(250, 248, 242, 0.02),
-            rgba(250, 248, 242, 0.05)
-        ),
-        url("761D5D44-A5C9-4272-98A2-AC2CF5BD1E4D.png");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 55px 6%;
-}
-
-/* VERY LIGHT WARM FILTER */
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(255, 249, 214, 0.01),
-            rgba(255, 249, 214, 0.025)
-        );
-    pointer-events: none;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: #FFFDF5;
-    text-shadow: 0 2px 18px rgba(30, 20, 12, 0.18);
-}
-
-.eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-}
-
-.hero h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: normal;
-    font-size: clamp(46px, 7vw, 88px);
-    letter-spacing: -3px;
-    line-height: 0.95;
-}
-
-/* LIGHT BUTTER YELLOW */
-.statement {
-    background: #FFF9D6;
-    padding: 75px 8%;
-    text-align: center;
-    color: #292622;
-}
-
-.statement p {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(27px, 4vw, 52px);
-    line-height: 1.15;
-    max-width: 900px;
-    margin: auto;
-}
-
-/* WARM IVORY INTRO */
-.intro {
-    background: #FAF8F2;
-    padding: 95px 8%;
-    text-align: center;
-}
-
-.intro-small {
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #A77E75;
-    margin-bottom: 25px;
-}
-
-.intro h2 {
-    max-width: 850px;
-    margin: auto;
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: normal;
-    font-size: clamp(30px, 4vw, 55px);
-    line-height: 1.15;
-    color: #292622;
-}
-
-/* VINTAGE DUSTY ROSE */
-footer {
-    background: #C99E94;
-    padding: 45px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #292622;
-}
-
-/* MOBILE */
-@media (max-width: 650px) {
-
-    header {
-        height: 70px;
-        padding: 0 20px;
+      --blue: #66889B;
+      --olive: #73754D;
     }
 
-    .brand {
-        font-size: 25px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .header-right {
-        gap: 13px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .search {
-        display: none;
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
     }
 
-    .menu,
-    .header-right {
-        font-size: 9px;
-        letter-spacing: 1.5px;
+    /* ---------------- NAV ---------------- */
+
+    .nav {
+      height: 110px;
+      padding: 0 5vw;
+
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+
+      background: var(--warm-white);
+
+      position: relative;
+      z-index: 20;
     }
+
+    .nav-side {
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .nav-right {
+      text-align: right;
+    }
+
+    .logo {
+      font-family: "Italiana", serif;
+      font-size: clamp(34px, 4vw, 55px);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    /* ---------------- HERO ---------------- */
 
     .hero {
-        min-height: calc(100vh - 70px);
-        background-position: 47% center;
-        padding: 38px 20px;
+      position: relative;
+      height: calc(100svh - 110px);
+      min-height: 650px;
+
+      background-image:
+        linear-gradient(
+          to right,
+          rgba(28, 20, 15, .22),
+          rgba(28, 20, 15, .02) 55%
+        ),
+        url("hero.jpg");
+
+      background-size: cover;
+      background-position: center 38%;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding: 6vw;
+      color: var(--warm-white);
     }
 
-    .hero h1 {
-        font-size: 48px;
-        letter-spacing: -2px;
+    .hero-copy {
+      max-width: 610px;
+      margin-bottom: 2vh;
     }
 
     .eyebrow {
-        font-size: 9px;
-        letter-spacing: 2.5px;
+      font-size: 12px;
+      letter-spacing: .27em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
     }
+
+    .hero h1 {
+      font-family: "Italiana", serif;
+      font-weight: 400;
+
+      font-size: clamp(64px, 8vw, 130px);
+      line-height: .87;
+      letter-spacing: -.035em;
+    }
+
+    .hero h1 em {
+      font-weight: 400;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 38px;
+
+      border: 1px solid rgba(255,255,255,.85);
+
+      padding: 16px 28px;
+
+      color: white;
+      text-decoration: none;
+
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: 11px;
+
+      transition: .25s ease;
+    }
+
+    .hero-button:hover {
+      background: var(--warm-white);
+      color: var(--ink);
+    }
+
+    /* ---------------- STATEMENT ---------------- */
 
     .statement {
-        padding: 55px 25px;
+      background: var(--butter);
+
+      min-height: 330px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 70px 7vw;
     }
+
+    .statement h2 {
+      font-family: "Italiana", serif;
+      font-weight: 400;
+
+      font-size: clamp(40px, 5vw, 75px);
+      line-height: 1.08;
+
+      max-width: 1000px;
+
+      color: var(--chocolate);
+    }
+
+    /* ---------------- INTRO ---------------- */
 
     .intro {
-        padding: 70px 25px;
+      min-height: 650px;
+
+      background: var(--powder-pink);
+
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+
+      padding: 9vw 7vw;
     }
 
-    footer {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
+    .intro-label {
+      font-size: 11px;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+
+      color: var(--oxblood);
     }
-}
-</style>
+
+    .intro-copy h3 {
+      font-family: "Italiana", serif;
+
+      font-size: clamp(48px, 6vw, 88px);
+      line-height: 1.03;
+
+      font-weight: 400;
+
+      max-width: 900px;
+
+      color: var(--oxblood);
+    }
+
+    .intro-copy p {
+      max-width: 570px;
+
+      margin-top: 40px;
+
+      font-size: 15px;
+      line-height: 1.8;
+
+      color: var(--chocolate);
+    }
+
+    /* ---------------- COLOR / BRAND STRIP ---------------- */
+
+    .color-strip {
+      height: 145px;
+
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .color-strip div:nth-child(1) {
+      background: var(--oxblood);
+    }
+
+    .color-strip div:nth-child(2) {
+      background: var(--rust);
+    }
+
+    .color-strip div:nth-child(3) {
+      background: var(--butter);
+    }
+
+    .color-strip div:nth-child(4) {
+      background: var(--olive);
+    }
+
+    .color-strip div:nth-child(5) {
+      background: var(--blue);
+    }
+
+    .color-strip div:nth-child(6) {
+      background: var(--chocolate);
+    }
+
+    /* ---------------- SECOND LIFE ---------------- */
+
+    .second-life {
+      min-height: 620px;
+
+      background: var(--oxblood);
+      color: var(--ivory);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding: 7vw;
+    }
+
+    .second-life small {
+      letter-spacing: .3em;
+      text-transform: uppercase;
+    }
+
+    .second-life h2 {
+      font-family: "Italiana", serif;
+      font-weight: 400;
+
+      font-size: clamp(55px, 8vw, 120px);
+      line-height: .95;
+
+      max-width: 1100px;
+    }
+
+    /* ---------------- BLUE MOMENT ---------------- */
+
+    .blue-section {
+      background: var(--blue);
+      color: var(--warm-white);
+
+      min-height: 430px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 8vw;
+      text-align: center;
+    }
+
+    .blue-section h2 {
+      font-family: "Italiana", serif;
+
+      font-size: clamp(45px, 6vw, 90px);
+      font-weight: 400;
+
+      max-width: 950px;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    footer {
+      background: var(--chocolate);
+      color: var(--ivory);
+
+      padding: 70px 6vw 40px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 50px;
+
+      margin-bottom: 100px;
+    }
+
+    .footer-logo {
+      font-family: "Italiana", serif;
+      font-size: 45px;
+    }
+
+    .footer-message {
+      font-family: "Italiana", serif;
+      font-size: clamp(30px, 4vw, 55px);
+      max-width: 650px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.25);
+
+      padding-top: 25px;
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    /* ---------------- MOBILE ---------------- */
+
+    @media (max-width: 700px) {
+
+      .nav {
+        height: 95px;
+        padding: 0 22px;
+      }
+
+      .logo {
+        font-size: 29px;
+      }
+
+      .nav-side {
+        font-size: 10px;
+      }
+
+      .hero {
+        height: calc(100svh - 95px);
+        min-height: 650px;
+
+        padding: 35px 25px;
+
+        /*
+          Important for your group image:
+          Keeps the women centered on mobile.
+        */
+        background-position: 50% center;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+        line-height: .91;
+      }
+
+      .eyebrow {
+        font-size: 9px;
+      }
+
+      .statement {
+        min-height: 300px;
+        padding: 60px 30px;
+      }
+
+      .statement h2 {
+        font-size: 41px;
+      }
+
+      .intro {
+        min-height: 620px;
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+        padding: 80px 28px;
+      }
+
+      .intro-copy h3 {
+        font-size: 49px;
+      }
+
+      .color-strip {
+        height: 85px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .second-life {
+        min-height: 520px;
+        padding: 70px 28px;
+      }
+
+      .second-life h2 {
+        font-size: 60px;
+      }
+
+      .blue-section {
+        min-height: 360px;
+        padding: 60px 28px;
+      }
+
+      .blue-section h2 {
+        font-size: 48px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        margin-bottom: 70px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="menu">Menu</div>
+  <nav class="nav">
 
-    <div class="brand">Attire no•II</div>
-
-    <div class="header-right">
-        <span class="search">Search</span>
-        <span>Bag (0)</span>
+    <div class="nav-side">
+      Menu
     </div>
-</header>
 
-<section class="hero">
-    <div class="hero-content">
-        <div class="eyebrow">Curated vintage & archival pieces</div>
-        <h1>Chosen for the next.</h1>
+    <div class="logo">
+      Attire no•II
     </div>
-</section>
 
-<section class="statement">
-    <p>
+    <div class="nav-side nav-right">
+      Bag (0)
+    </div>
+
+  </nav>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          Curated vintage & archival pieces
+        </div>
+
+        <h1>
+          Chosen for<br>
+          the <em>next.</em>
+        </h1>
+
+        <a href="#collection" class="hero-button">
+          Explore →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- BUTTER -->
+
+    <section class="statement">
+
+      <h2>
         Pieces with a past,<br>
         chosen for what comes next.
-    </p>
-</section>
+      </h2>
 
-<section class="intro">
-    <div class="intro-small">Attire no•II</div>
+    </section>
 
-    <h2>
-        A considered collection of vintage,
-        archival and pre-loved pieces.
-    </h2>
-</section>
 
-<footer>
-    <span>Attire no•II</span>
-    <span>California</span>
-    <span>© 2026</span>
-</footer>
+    <!-- PINK -->
+
+    <section class="intro" id="collection">
+
+      <div class="intro-label">
+        Attire no•II
+      </div>
+
+      <div class="intro-copy">
+
+        <h3>
+          A considered collection of vintage,
+          archival and pre-loved pieces.
+        </h3>
+
+        <p>
+          Selected individually for character,
+          construction and the possibility of
+          another life.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PALETTE MOMENT -->
+
+    <section class="color-strip">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+
+
+    <!-- OXBLOOD -->
+
+    <section class="second-life">
+
+      <small>
+        Chosen for the next
+      </small>
+
+      <h2>
+        A second life<br>
+        looks good<br>
+        on you.
+      </h2>
+
+    </section>
+
+
+    <!-- BLUE -->
+
+    <section class="blue-section">
+
+      <h2>
+        People. Pieces.<br>
+        Stories. Forever.
+      </h2>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="footer-logo">
+        Attire no•II
+      </div>
+
+      <div class="footer-message">
+        The next chapter starts here.
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <span>
+        @attirenotwo
+      </span>
+
+      <span>
+        Curated Vintage & Archival Pieces
+      </span>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
