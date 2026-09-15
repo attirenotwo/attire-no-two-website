@@ -64,8 +64,8 @@ header {
 
     background-image:
         linear-gradient(
-            rgba(248,244,232,.03),
-            rgba(248,244,232,.08)
+            rgba(248,244,232,.02),
+            rgba(248,244,232,.06)
         ),
         url("761D5D44-A5C9-4272-98A2-AC2CF5BD1E4D.png");
 
@@ -79,17 +79,15 @@ header {
     padding: 55px 6%;
 }
 
-/* very subtle warm light */
 .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(243,230,181,.03),
-            rgba(248,244,232,.06)
-        );
+    background: linear-gradient(
+        to bottom,
+        rgba(248,244,232,.01),
+        rgba(242,217,120,.04)
+    );
     pointer-events: none;
 }
 
@@ -116,11 +114,12 @@ header {
     line-height: .95;
 }
 
-/* BUTTER STRIP */
+/* BUTTER YELLOW STATEMENT */
 .statement {
-    background: #F5E3A4;
+    background: #F2D978;
     padding: 75px 8%;
     text-align: center;
+    color: #211F1B;
 }
 
 .statement p {
@@ -131,7 +130,7 @@ header {
     margin: auto;
 }
 
-/* INTRO */
+/* WARM IVORY INTRO */
 .intro {
     background: #F8F4E8;
     padding: 95px 8%;
@@ -142,7 +141,7 @@ header {
     font-size: 10px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #68594A;
+    color: #A96F72;
     margin-bottom: 25px;
 }
 
@@ -153,11 +152,12 @@ header {
     font-weight: normal;
     font-size: clamp(30px, 4vw, 55px);
     line-height: 1.15;
+    color: #211F1B;
 }
 
-/* FOOTER */
+/* DUSTY ROSE FOOTER */
 footer {
-    background: #EFE7D8;
+    background: #A96F72;
     padding: 45px 5%;
     display: flex;
     justify-content: space-between;
@@ -165,7 +165,7 @@ footer {
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #68594A;
+    color: #F8F4E8;
 }
 
 /* MOBILE */
@@ -256,6 +256,7 @@ footer {
 
 <section class="intro">
     <div class="intro-small">Attire no•II</div>
+
     <h2>
         A considered collection of vintage,
         archival and pre-loved pieces.
