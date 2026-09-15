@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Attire no•II</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f3e9;
+      color: #181818;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .launch {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 34px 42px;
+    }
+
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 5vw, 65px);
+      font-weight: normal;
+      letter-spacing: -2px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .center p {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .date {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(55px, 11vw, 150px);
+      font-weight: normal;
+      line-height: .9;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .yellow {
+      width: 18px;
+      height: 18px;
+      background: #f4e77d;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 600px) {
+      .launch {
+        padding: 25px 22px;
+      }
+
+      .footer {
+        font-size: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="launch">
+
+    <header>
+      <h1 class="brand">Attire no•II</h1>
+    </header>
+
+    <section class="center">
+      <p>Chosen for the next</p>
+      <h2 class="date">10.03.26</h2>
+    </section>
+
+    <footer class="footer">
+      <span>Curated Vintage & Archival Pieces</span>
+      <div class="yellow"></div>
+      <span>California</span>
+    </footer>
+
+  </main>
+
+</body>
+</html>
