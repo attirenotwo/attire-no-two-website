@@ -1,378 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Attire no•II | Curated Vintage</title>
+<title>Attire no•II | Curated Vintage</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    body {
-      background: #f5f0e8;
-      color: #171717;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+body {
+    background: #F8F4E8;
+    color: #211F1B;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    /* HEADER */
+/* HEADER */
+header {
+    width: 100%;
+    height: 82px;
+    padding: 0 4%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: #F8F4E8;
+    border-bottom: 1px solid rgba(33,31,27,.08);
+    position: relative;
+    z-index: 10;
+}
+
+.brand {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 3vw, 42px);
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+}
+
+.menu,
+.header-right {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 28px;
+}
+
+/* HERO */
+.hero {
+    min-height: calc(100vh - 82px);
+    position: relative;
+
+    background-image:
+        linear-gradient(
+            rgba(248,244,232,.03),
+            rgba(248,244,232,.08)
+        ),
+        url("761D5D44-A5C9-4272-98A2-AC2CF5BD1E4D.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 55px 6%;
+}
+
+/* very subtle warm light */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(242,228,164,.03),
+            rgba(248,244,232,.06)
+        );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #FFF9E9;
+    text-shadow: 0 2px 18px rgba(30,20,12,.18);
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(46px, 7vw, 88px);
+    letter-spacing: -3px;
+    line-height: .95;
+}
+
+/* BUTTER STRIP */
+.statement {
+    background: #F2E4A4;
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.statement p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 4vw, 52px);
+    line-height: 1.15;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* INTRO */
+.intro {
+    background: #F8F4E8;
+    padding: 95px 8%;
+    text-align: center;
+}
+
+.intro-small {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #68594A;
+    margin-bottom: 25px;
+}
+
+.intro h2 {
+    max-width: 850px;
+    margin: auto;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(30px, 4vw, 55px);
+    line-height: 1.15;
+}
+
+/* FOOTER */
+footer {
+    background: #EFE7D8;
+    padding: 45px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #68594A;
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+
     header {
-      width: 100%;
-      height: 82px;
-      padding: 0 4%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #f5f0e8;
-      border-bottom: 1px solid rgba(0,0,0,0.12);
-      position: relative;
-      z-index: 20;
+        height: 70px;
+        padding: 0 20px;
     }
 
-    .menu {
-      width: 33%;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .logo {
-      width: 34%;
-      text-align: center;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 29px;
-      letter-spacing: -1px;
-      white-space: nowrap;
+    .brand {
+        font-size: 25px;
     }
 
     .header-right {
-      width: 33%;
-      display: flex;
-      justify-content: flex-end;
-      gap: 22px;
-      font-size: 11px;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
+        gap: 13px;
     }
 
-    /* HERO */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: calc(100vh - 82px);
-      min-height: 620px;
-      overflow: hidden;
-      background: #d8c3ae;
-    }
-
-    .hero-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.02),
-        rgba(0,0,0,0.15)
-      );
-    }
-
-    .hero-copy {
-      position: absolute;
-      left: 50%;
-      bottom: 7%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: white;
-      width: 90%;
-    }
-
-    .hero-copy .eyebrow {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    .hero-copy h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: normal;
-      font-size: clamp(45px, 7vw, 100px);
-      line-height: 0.95;
-      letter-spacing: -3px;
-    }
-
-    .hero-copy p {
-      margin-top: 18px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      font-size: 18px;
-    }
-
-    /* INTRO */
-    .intro {
-      padding: 110px 8%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: end;
-    }
-
-    .intro-small {
-      font-size: 10px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-    }
-
-    .intro-text {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(28px, 3.2vw, 50px);
-      line-height: 1.08;
-      max-width: 700px;
-    }
-
-    /* SHOP PREVIEW */
-    .collection {
-      padding: 40px 4% 110px;
-    }
-
-    .collection-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px solid #171717;
-      padding-bottom: 13px;
-      margin-bottom: 35px;
-    }
-
-    .collection-head h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 34px;
-      font-weight: normal;
-    }
-
-    .collection-head span {
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .product-placeholder {
-      aspect-ratio: 3 / 4;
-      background: #e7ded2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      color: #756b60;
-    }
-
-    .product-name {
-      margin-top: 12px;
-      font-size: 11px;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #171717;
-      color: #f5f0e8;
-      padding: 75px 4% 35px;
-    }
-
-    .footer-logo {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(48px, 8vw, 115px);
-      line-height: 1;
-      letter-spacing: -4px;
-    }
-
-    .footer-bottom {
-      margin-top: 70px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.25);
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 700px) {
-      header {
-        height: 68px;
-      }
-
-      .logo {
-        width: auto;
-        font-size: 23px;
-      }
-
-      .menu {
-        width: auto;
-      }
-
-      .header-right {
-        width: auto;
-      }
-
-      .header-right span:first-child {
+    .search {
         display: none;
-      }
+    }
 
-      .hero {
-        height: 78vh;
-        min-height: 520px;
-      }
+    .menu,
+    .header-right {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
 
-      .hero-copy h1 {
+    .hero {
+        min-height: calc(100vh - 70px);
+        background-position: 47% center;
+        padding: 38px 20px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
         letter-spacing: -2px;
-      }
+    }
 
-      .intro {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 75px 6%;
-      }
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
 
-      .products {
-        grid-template-columns: 1fr 1fr;
-      }
+    .statement {
+        padding: 55px 25px;
+    }
 
-      .collection {
-        padding-left: 4%;
-        padding-right: 4%;
-      }
+    .intro {
+        padding: 70px 25px;
+    }
 
-      .footer-bottom {
+    footer {
         flex-direction: column;
         gap: 12px;
-      }
+        text-align: center;
     }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="menu">Menu</div>
+    <div class="menu">Menu</div>
 
-  <div class="logo">
-    Attire no•II
-  </div>
+    <div class="brand">Attire no•II</div>
 
-  <div class="header-right">
-    <span>Search</span>
-    <span>Bag (0)</span>
-  </div>
+    <div class="header-right">
+        <span class="search">Search</span>
+        <span>Bag (0)</span>
+    </div>
 </header>
 
-
 <section class="hero">
-
-  <!-- HERO IMAGE GOES HERE -->
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-copy">
-    <div class="eyebrow">Curated Vintage & Archival Pieces</div>
-
-    <h1>Chosen for the next.</h1>
-
-    <p>A new chapter begins October 3.</p>
-  </div>
-
+    <div class="hero-content">
+        <div class="eyebrow">Curated vintage & archival pieces</div>
+        <h1>Chosen for the next.</h1>
+    </div>
 </section>
 
+<section class="statement">
+    <p>
+        Pieces with a past,<br>
+        chosen for what comes next.
+    </p>
+</section>
 
 <section class="intro">
-
-  <div class="intro-small">
-    Attire no•II / California
-  </div>
-
-  <div class="intro-text">
-    Pieces with a past,
-    chosen for what comes next.
-  </div>
-
+    <div class="intro-small">Attire no•II</div>
+    <h2>
+        A considered collection of vintage,
+        archival and pre-loved pieces.
+    </h2>
 </section>
-
-
-<section class="collection">
-
-  <div class="collection-head">
-    <h2>The First Edit</h2>
-    <span>Coming October 3</span>
-  </div>
-
-  <div class="products">
-
-    <div>
-      <div class="product-placeholder">
-        No. 01
-      </div>
-      <div class="product-name">Coming Soon</div>
-    </div>
-
-    <div>
-      <div class="product-placeholder">
-        No. 02
-      </div>
-      <div class="product-name">Coming Soon</div>
-    </div>
-
-    <div>
-      <div class="product-placeholder">
-        No. 03
-      </div>
-      <div class="product-name">Coming Soon</div>
-    </div>
-
-  </div>
-
-</section>
-
 
 <footer>
-
-  <div class="footer-logo">
-    Attire no•II
-  </div>
-
-  <div class="footer-bottom">
-
-    <span>Curated Vintage & Archival Pieces</span>
-
-    <span>Chosen for the next.</span>
-
-    <span>© 2026 Attire no•II</span>
-
-  </div>
-
+    <span>Attire no•II</span>
+    <span>California</span>
+    <span>© 2026</span>
 </footer>
 
 </body>
